@@ -6,5 +6,6 @@ public class Player extends CharacterStats {
         this.setAttackDamage(damage);
         this.setMaxHealth(health);
         this.setCurHealth(this.getMaxHealth());
+        this.setStatus(true);
     }
 }

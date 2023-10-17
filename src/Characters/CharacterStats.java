@@ -2,6 +2,14 @@ package Characters;
 
 public class CharacterStats {
     private int maxHealth;
+    // status of the character ( dead = False, alive = True )
+    private boolean status;
+    public boolean getStatus(){
+        return this.status;
+    }
+    public void setStatus(boolean isAlive){
+        this.status = isAlive;
+    }
     public int getMaxHealth(){
         return this.maxHealth;
     }

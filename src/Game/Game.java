@@ -8,6 +8,7 @@ public abstract class Game {
         String name = sc.nextLine();
         Player player = new Player(name,100,20);
         GameLogic.announce("Your Character name is "+player.getName()+".");
+        GameLogic.gameLoop(player);
 
     }
 
