@@ -1,7 +1,13 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.LinkedList;
+import java.util.Queue;
+
 import Characters.Enemy;
-public class Dungeons {
+public class Dungeon {
+    public Dungeon(int level){
+        this.entryLevel = level;
+    }
     private int entryLevel;
     public int getEntryLevel(){
         return this.entryLevel;
@@ -30,6 +36,13 @@ public class Dungeons {
     public void setLoot(String item){
         this.loot = item;
     }
-    private ArrayList<Enemy> enemyBoosList = new ArrayList<Enemy>(Arrays.<Enemy>asList());
-    private ArrayList<Enemy> sideEnemyList = new ArrayList<Enemy>(Arrays.<Enemy>asList());
+    private Queue<Enemy> enemyBossList = new LinkedList<>();
+    private Queue<Enemy> sideEnemyList = new LinkedList<>();
+    public void addEnemy(Enemy enemy){
+        this.sideEnemyList.add(enemy);
+    }
+    public Enemy getNextEnemyList(){
+        return this.sideEnemyList.poll();
+    }
+
 }
