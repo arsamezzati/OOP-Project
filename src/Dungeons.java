@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import Characters.Enemy;
 public class Dungeons {
     private int entryLevel;
     public int getEntryLevel(){
@@ -27,5 +30,6 @@ public class Dungeons {
     public void setLoot(String item){
         this.loot = item;
     }
-
+    private ArrayList<Enemy> enemyBoosList = new ArrayList<Enemy>(Arrays.<Enemy>asList());
+    private ArrayList<Enemy> sideEnemyList = new ArrayList<Enemy>(Arrays.<Enemy>asList());
 }
