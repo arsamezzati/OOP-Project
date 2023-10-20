@@ -1,5 +1,7 @@
 package Characters;
 
+import Game.GameLogic;
+
 public class CharacterStats {
     private int maxHealth;
     // status of the character ( dead = False, alive = True )
@@ -15,6 +17,7 @@ public class CharacterStats {
     }
     public void setMaxHealth(int amount){
         this.maxHealth = amount;
+
     }
     private int curHealth;
     public int getCurHealth(){
@@ -22,6 +25,9 @@ public class CharacterStats {
     }
     public void setCurHealth(int amount){
         this.curHealth = amount;
+        if (this.curHealth == 0){
+            this.setStatus(false);
+        }
     }
     private int AttackDamage;
     public int getAttackDamage(){
@@ -36,5 +42,10 @@ public class CharacterStats {
     }
     public void setName(String name){
         this.name = name;
+    }
+    public void getInfo(){
+        GameLogic.announce(getClass().getName() + ": "+ this.getName());
+        System.out.println("Health: "+this.getCurHealth()+"/"+this.getMaxHealth());
+        System.out.println("Damage: " + this.getAttackDamage());
     }
 }
