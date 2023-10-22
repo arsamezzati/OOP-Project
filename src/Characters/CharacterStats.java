@@ -3,6 +3,13 @@ package Characters;
 import Game.GameLogic;
 
 public class CharacterStats {
+    private int level;
+    public int getLevel(){
+        return this.level;
+    }
+    public void setLevel(int amount){
+        this.level = amount;
+    }
     private int maxHealth;
     // status of the character ( dead = False, alive = True )
     private boolean status;
