@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Goblin g = new Goblin(1);
-        g.getInfo();
+        DeathClaw d = new DeathClaw(2);
+        d.getInfo();
 
     }
 }
