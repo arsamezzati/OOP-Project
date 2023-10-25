@@ -8,6 +8,6 @@ public class Vecna extends Enemy {
         this.setMaxHealth((int) (100*(level*0.5)));
         this.setCurHealth(this.getMaxHealth());
         this.setLevel(level);
-        this.setAttackDamage(25+level);
+        this.setAttackDamage(30+level);
     }
 }
