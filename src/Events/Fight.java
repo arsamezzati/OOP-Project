@@ -1,6 +1,7 @@
-package Game;
+package Events;
 import Characters.Enemy;
 import Characters.Player;
+import Game.GameLogic;
 
 public class Fight {
     public Fight(Player p,Enemy e){

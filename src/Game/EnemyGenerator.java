@@ -5,8 +5,9 @@ import Characters.Enemy;
 import Characters.Player;
 import java.util.Random;
 import Characters.Enemies.*;
+import Events.EventManager;
 
-public class EnemyGenerator extends Event{
+public class EnemyGenerator extends EventManager {
     private String[] enemies = {"goblin","Assassin","Shadow","HuntingTroll"};
 
     public Enemy generateEnemy(Player p){

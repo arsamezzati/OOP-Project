@@ -1,14 +1,12 @@
-package Game;
+package Events;
 
-import java.util.ArrayList;
-import java.util.PriorityQueue;
 import java.util.LinkedList;
 import java.util.Queue;
 
 import Characters.Enemy;
 import Characters.Player;
 
-public class Dungeon extends Event {
+public class Dungeon extends EventManager {
     public Dungeon(int level){
         this.entryLevel = level;
     }
