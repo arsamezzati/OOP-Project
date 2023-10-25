@@ -1,10 +1,9 @@
 package Characters.Enemies;
 
 import Characters.Enemy;
-
-public class IceKing extends Enemy {
-    public IceKing(int level){
-        this.setName("Ice King");
+public class LichKing extends Enemy {
+    public LichKing(int level){
+        this.setName("Lich King");
         this.setMaxHealth((int) (100*(level*0.5)));
         this.setCurHealth(this.getMaxHealth());
         this.setLevel(level);

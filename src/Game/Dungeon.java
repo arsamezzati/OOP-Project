@@ -6,7 +6,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import Characters.Enemy;
-public class Dungeon {
+import Characters.Player;
+
+public class Dungeon extends Event {
     public Dungeon(int level){
         this.entryLevel = level;
     }
@@ -45,6 +47,9 @@ public class Dungeon {
     }
     public Enemy getNextEnemyList(){
         return this.sideEnemyList.poll();
+    }
+    public static Dungeon trigger(Player p){
+        return new Dungeon(p.getLevel());
     }
 
 }
