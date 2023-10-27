@@ -28,6 +28,10 @@ public class GameLogic {
         }
         return choice;
     }
+    public static Boolean gameStatus(Player p){
+        return p.getStatus();
+
+    }
 
 
 

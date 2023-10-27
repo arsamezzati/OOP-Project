@@ -8,17 +8,17 @@ import Characters.Enemies.*;
 import Events.EventManager;
 
 public class EnemyGenerator extends EventManager {
-    private String[] enemies = {"goblin","Assassin","Shadow","HuntingTroll"};
+    private static final String[] enemies = {"goblin","Assassin","Shadow","HuntingTroll"};
 
-    public Enemy generateEnemy(Player p){
+    public static Enemy generateEnemy(Player p){
         Random random = new Random();
         int num = random.nextInt(enemies.length);
         String enemy = enemies[num];
         return switch (enemy) {
             case ("goblin") -> new Goblin(p.getLevel());
             case ("Assassin") -> new Assassin(p.getLevel());
-            case ("Shadow") -> new Shadow(p.getLevel());
             case ("HuntingTroll") -> new HuntingTroll(p.getLevel());
+            case "Shadow" -> new Shadow(p.getLevel());
             default -> throw new IllegalStateException("Unexpected Value: " + enemy);
         };
 

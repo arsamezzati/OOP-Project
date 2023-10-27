@@ -5,7 +5,7 @@ import Game.EnemyGenerator;
 import java.util.Random;
 public class EventManager {
     // list of events
-    private static final String[] events = {"Shop","Dungeon","Enemy","Fountain","Wisdom","Treasure"};
+    private static final String[] events = {"Dungeon","Enemy","Fountain","Treasure"};
 
     public static EventManager trigger(Player p){
         Random random = new Random();
@@ -15,6 +15,7 @@ public class EventManager {
             case "Dungeon" -> Dungeon.trigger(p);
             case "Enemy" -> EnemyGenerator.trigger(p);
             case "Fountain"-> Fountain.trigger(p);
+            case "Treasure" -> Treasure.trigger(p);
             default -> throw new IllegalStateException("Unexpected value: " + randomMember);
 
         };
