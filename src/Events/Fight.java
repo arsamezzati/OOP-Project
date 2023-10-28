@@ -16,19 +16,17 @@ public class Fight {
     }
 
     public void startFight() {
-        while(this.player.getStatus()){
+
+        while(this.player.getStatus() && this.enemy.getStatus()){
             this.player.getInfo();
             this.enemy.getInfo();
-            int choice = GameLogic.choice("Choose your next move\n1) Explore\n2) Quit",2);
-            switch(choice){
-                case(1):
-                    this.enemy.setCurHealth(this.enemy.getCurHealth()-this.player.getAttackDamage());
-                    this.player.setCurHealth(this.player.getCurHealth()-this.enemy.getAttackDamage());
-                    break;
-                case(2):
-                    this.player.setStatus(false);
-                    System.out.println(" no pussy ");
-                    break;
+
+            int choice = GameLogic.choice("Choose your next move\n1) Attack\n2) Runaway",2);
+            if (choice == 1){
+                this.enemy.setCurHealth(this.enemy.getCurHealth()-this.player.getAttackDamage());
+                this.player.setCurHealth(this.player.getCurHealth()-this.enemy.getAttackDamage());
+                this.player.checkStatus();
+                this.enemy.checkStatus();
             }
 
         }

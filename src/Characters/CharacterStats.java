@@ -19,6 +19,11 @@ public class CharacterStats {
     public void setStatus(boolean isAlive){
         this.status = isAlive;
     }
+    public void checkStatus(){
+        if (this.curHealth <= 0){
+            this.status = false;
+        }
+    }
     public int getMaxHealth(){
         return this.maxHealth;
     }

@@ -7,5 +7,6 @@ public class Player extends CharacterStats {
         this.setMaxHealth(health);
         this.setCurHealth(this.getMaxHealth());
         this.setStatus(true);
+        this.setLevel(1);
     }
 }

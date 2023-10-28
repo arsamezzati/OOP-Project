@@ -10,11 +10,12 @@ import Game.EnemyGenerator;
 import Game.GameLogic;
 
 public class Dungeon extends EventManager {
-    public Dungeon(int level){
-        this.entryLevel = level;
+    public Dungeon(Player p){
+        this.entryLevel = p.getLevel();
 
     }
     private int entryLevel;
+    private boolean isRandom;
     public int getEntryLevel(){
         return this.entryLevel;
     }
@@ -44,33 +45,47 @@ public class Dungeon extends EventManager {
     }
     private Queue<Enemy> enemyBossList = new LinkedList<>();
     private Queue<Enemy> sideEnemyList = new LinkedList<>();
+    public Queue<Enemy> getSideEnemyList(){
+        return this.sideEnemyList;
+    }
+
     public void addEnemy(Enemy enemy){
         this.sideEnemyList.add(enemy);
     }
-    public Enemy getNextEnemyList(){
+    public Enemy seeNextEnemyList(){
         return this.sideEnemyList.poll();
+    }
+    public Enemy getNextEnemyList(){
+        return this.sideEnemyList.peek();
     }
     public static Dungeon trigger(Player p){
         GameLogic.announce("YOU FOUND A DUNGEON");
         System.out.println("Do you want to explore it?");
         int choice = GameLogic.choice("1) Yes\n2) No",2);
         if (choice == 1){
-            Dungeon d = new Dungeon(p.getLevel());
+            Dungeon d = new Dungeon(p);
+            d.randomGen(p);
+
+            
+            GameLogic.dungeonLoop(d,p);
 
 
 
         }
         Scanner sc = new Scanner(System.in);
 
-        return new Dungeon(p.getLevel());
+        return new Dungeon(p);
     }
     public void randomGen(Player p){
         Enemy e1 = EnemyGenerator.generateEnemy(p);
+
         Enemy e2 = EnemyGenerator.generateEnemy(p);
+
         Enemy e3 = EnemyGenerator.generateEnemy(p);
-        this.sideEnemyList.add(e1);
-        this.sideEnemyList.add(e2);
-        this.sideEnemyList.add(e3);
+
+        this.sideEnemyList.offer(e1);
+        this.sideEnemyList.offer(e2);
+        this.sideEnemyList.offer(e3);
     }
 
 }

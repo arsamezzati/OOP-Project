@@ -1,5 +1,7 @@
 package Game;
 import Characters.*;
+import Events.Dungeon;
+import Events.Fight;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -30,6 +32,30 @@ public class GameLogic {
     }
     public static Boolean gameStatus(Player p){
         return p.getStatus();
+
+    }
+    public static void dungeonLoop(Dungeon d, Player p){
+        while(!d.getSideEnemyList().isEmpty()){
+
+            System.out.println(d.getSideEnemyList());
+            Enemy en = d.getNextEnemyList();
+            announce("Choose your next move");
+            Scanner sc = new Scanner(System.in);
+            int choice = choice("1)Fight "+ d.seeNextEnemyList().getName()+"\n2)Quit Dungeon",2);
+            switch (choice){
+                case (1):
+
+                    en.getInfo();
+                    Fight f1 = new Fight(p,en);
+                    f1.startFight();
+                case 2:
+                    break;
+            }
+
+
+
+        }
+
 
     }
 
