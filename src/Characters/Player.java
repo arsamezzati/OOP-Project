@@ -1,5 +1,5 @@
 package Characters;
-
+import Items.*;
 public class Player extends CharacterStats {
     public Player(String name,int health,int damage){
         this.setName(name);
@@ -8,5 +8,8 @@ public class Player extends CharacterStats {
         this.setCurHealth(this.getMaxHealth());
         this.setStatus(true);
         this.setLevel(1);
+    }
+    public void updatePlayer(ItemsStats Item){
+
     }
 }
