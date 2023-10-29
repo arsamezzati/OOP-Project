@@ -58,23 +58,14 @@ public class Dungeon extends EventManager {
     public Enemy getNextEnemyList(){
         return this.sideEnemyList.peek();
     }
-    public static Dungeon trigger(Player p){
+    public static void trigger(Player p) {  // Changed return type to void
         GameLogic.announce("YOU FOUND A DUNGEON");
-        System.out.println("Do you want to explore it?");
-        int choice = GameLogic.choice("1) Yes\n2) No",2);
-        if (choice == 1){
+        int choice = GameLogic.choice("Do you want to explore it?\n1) Yes\n2) No", 2);
+        if (choice == 1) {
             Dungeon d = new Dungeon(p);
             d.randomGen(p);
-
-            
-            GameLogic.dungeonLoop(d,p);
-
-
-
-        }
-        Scanner sc = new Scanner(System.in);
-
-        return new Dungeon(p);
+            GameLogic.dungeonLoop(d, p);
+        }  // Moved the return statement inside the if block
     }
     public void randomGen(Player p){
         Enemy e1 = EnemyGenerator.generateEnemy(p);

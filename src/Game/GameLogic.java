@@ -34,29 +34,22 @@ public class GameLogic {
         return p.getStatus();
 
     }
-    public static void dungeonLoop(Dungeon d, Player p){
-        while(!d.getSideEnemyList().isEmpty()){
-
+    public static void dungeonLoop(Dungeon d, Player p) {
+        while (!d.getSideEnemyList().isEmpty()) {
             System.out.println(d.getSideEnemyList());
             Enemy en = d.getNextEnemyList();
             announce("Choose your next move");
-            Scanner sc = new Scanner(System.in);
-            int choice = choice("1)Fight "+ d.seeNextEnemyList().getName()+"\n2)Quit Dungeon",2);
-            switch (choice){
-                case (1):
-
+            int choice = choice("1)Fight " + d.seeNextEnemyList().getName() + "\n2)Quit Dungeon", 2);
+            switch (choice) {
+                case 1:
                     en.getInfo();
-                    Fight f1 = new Fight(p,en);
+                    Fight f1 = new Fight(p, en);
                     f1.startFight();
+                    break;  // Added a break statement to exit the switch block
                 case 2:
-                    break;
+                    return;  // Added a return statement to exit the method
             }
-
-
-
         }
-
-
     }
 
 
