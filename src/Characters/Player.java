@@ -10,6 +10,7 @@ public class Player extends CharacterStats {
         this.setLevel(1);
     }
     public void updatePlayer(ItemsStats Item){
-
+        this.setMaxHealth(this.getMaxHealth() + Item.getHealth());
+        this.setAttackDamage(this.getAttackDamage() + Item.getAttackDamge());
     }
 }
