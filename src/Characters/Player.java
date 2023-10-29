@@ -9,8 +9,12 @@ public class Player extends CharacterStats {
         this.setStatus(true);
         this.setLevel(1);
     }
-    public void updatePlayer(ItemsStats Item){
+    public void equipItem(ItemsStats Item){
         this.setMaxHealth(this.getMaxHealth() + Item.getHealth());
         this.setAttackDamage(this.getAttackDamage() + Item.getAttackDamge());
+    }
+    public void unequipItem(ItemsStats Item){
+        this.setMaxHealth(this.getMaxHealth() - Item.getHealth());
+        this.setAttackDamage(this.getAttackDamage() - Item.getAttackDamge());
     }
 }

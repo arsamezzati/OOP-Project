@@ -4,7 +4,7 @@ import Events.Dungeon;
 import Events.EventManager;
 import Game.*;
 import Characters.Enemies.Shadow;
-
+import Items.*;
 import java.util.Scanner;
 
 public class Main {
@@ -26,8 +26,6 @@ public class Main {
             }else p.setStatus(false);
 
         }
-
-
 
     }
 }
