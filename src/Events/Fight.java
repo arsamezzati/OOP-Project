@@ -30,6 +30,9 @@ public class Fight {
             }
 
         }
+        if (!this.enemy.getStatus()){
+            this.player.gainXp(this.enemy);
+        }
     }
 
 }

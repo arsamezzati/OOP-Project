@@ -57,7 +57,7 @@ public class CharacterStats {
     }
     public void getInfo(){
         GameLogic.announce(getClass().getName() + ": "+ this.getName());
-        System.out.println("Health: "+this.getCurHealth()+"/"+this.getMaxHealth());
-        System.out.println("Damage: " + this.getAttackDamage());
+        System.out.print("Health: "+this.getCurHealth()+"/"+this.getMaxHealth());
+        System.out.print("Damage: " + this.getAttackDamage()+"\n");
     }
 }
