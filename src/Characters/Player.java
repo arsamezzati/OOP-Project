@@ -40,7 +40,7 @@ public class Player extends CharacterStats {
     }
     public void levelUp(){
         this.setLevel(this.getLevel()+1);
-        Scanner sc = new Scanner(System.in);
+
         System.out.println("### LEVEL UP ###");
         System.out.println("Your health has been restored");
         int choice = GameLogic.choice("Choose an uprade\n1) +5 Attack Damage\n+2) 15 Max Health",2);

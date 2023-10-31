@@ -9,11 +9,9 @@ public class Fight {
         this.player = p;
 
     }
-    private Enemy enemy;
-    private Player player;
-    public void explore(){
+    private final Enemy enemy;
+    private final Player player;
 
-    }
 
     public void startFight() {
 
