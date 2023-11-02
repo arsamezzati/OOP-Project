@@ -8,7 +8,7 @@ A simple text-based adventure game written in Java, demonstrating various Object
 3. [Abstract Data Type (ADT)](#abstract-data-type-adt)
 4. [Exception Handling](#exception-handling)
 5. [Inheritance](#inheritance)
-6. [Open / Closed Principle](#open-/-closed-principle)
+6. [Open/Closed Principle](#open/closed-principle)
 7. [Factory Pattern](#factory-pattern)
 8. [Info](#info)
 
@@ -142,7 +142,7 @@ public class Assassin extends Enemy {
     }
 }
 ```
-## Open / Closed Principle
+## Open/Closed Principle
 a good OOP design is one that is open to extension but closed to modification, in our code, we used a parent `Enemy` class and many subclasses of it defining different type of enemies, so that whenever we want to add one, we only have to create a new class:
 
 ![image](https://github.com/arsamezzati/OOP-Project/assets/73330803/8ac6b6a6-1d61-4925-91ff-f4fe65e5d401)
