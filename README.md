@@ -53,4 +53,37 @@ public static void trigger(Player p) {
         }  
     }
 ```
+## Abstract Data Type (ADT)
+An abstract data type is a data that hides/encapsulates methods and attributes in itself, in this case, we have an abstract class called `CharacterStats`:
+```java
+public class CharacterStats {
+    private int level;
+    public int getLevel(){
+        return this.level;
+    }
+    public void setLevel(int amount){
+        this.level = amount;
+    }
+    private int maxHealth;
+    // status of the character ( dead = False, alive = True )
+    private boolean status;
+    public boolean getStatus(){
+        return this.status;
+    }
+....
+```
+Both `Player` and `Enemy` use this abstract class:
+```java
+public class Player extends CharacterStats {
+    public Player(String name,int health,int damage){
+        this.setName(name);
+        this.setAttackDamage(damage);
+        this.setMaxHealth(health);
+        this.setCurHealth(this.getMaxHealth());
+        this.setStatus(true);
+        this.setLevel(1);
+        this.xp = 0;
+        this.maxXp = 50;
+    }...
+```
 
