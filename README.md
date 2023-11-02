@@ -104,7 +104,7 @@ public static int choice(String question, int choices) {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Please enter a valid number!");
-                sc.next(); // Consume the invalid token to avoid infinite loop
+                sc.next(); 
             }
         }
         return choice;
