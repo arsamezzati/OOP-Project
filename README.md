@@ -110,7 +110,7 @@ public static int choice(String question, int choices) {
         return choice;
     }
 ```
-## Inheritace
+## Inheritance
 Inheritance is using parent and child classes, children of a parent inherit all of their methods and attributes, we used Inheritance many times and `Player` and `Enemy` and all Enemy subclasses are examples of it:
 ```java
 public class Player extends CharacterStats {
