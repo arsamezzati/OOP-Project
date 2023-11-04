@@ -32,15 +32,36 @@ public class Player extends CharacterStats {
 ```
 
 ## Polymorphism
-Polymorphism is using Multi-purpose methods and classes, in our code, we used polymorphism using overriding in EventManager class and it's sub-classes:
+Polymorphism is using Multi-purpose methods and classes, in our code, we used polymorphism in the characters section, in this section, an instance of Player or Enemy could be used as a parameter of setTarget and the return value of getTarget method.
 ```java
-public class EventManager {
-    // list of events
-    private static final String[] events = {"Dungeon","Enemy","Fountain","Treasure"};
-
-    public static void trigger(Player p) {
-...
-}
+    public CharacterStats getTarget(){
+        return this.target;
+    }
+    public void setTarget(CharacterStats target){
+        this.target = target;
+    }
+```
+`CharacterStats` itself is an Abstract superclass and no Object of it will be created.
+```java
+public abstract class CharacterStats{
+        private int level;
+        ....}
+public class Player extends CharacterStats {
+    public Player(String name,int health,int damage){
+        this.setName(name);
+        this.setAttackDamage(damage);
+        this.setMaxHealth(health);
+        this.setCurHealth(this.getMaxHealth());
+        this.setStatus(true);
+        this.setLevel(1);
+        this.xp = 0;
+        this.maxXp = 50;
+    }
+public class Enemy extends CharacterStats{
+    public Enemy(){
+        this.setStatus(true);
+    }
+    
 ```
 The trigger method will be overridden in multiple subclasses of EventManager such ass Dungeon:
 ```java
