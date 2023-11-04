@@ -63,18 +63,7 @@ public class Enemy extends CharacterStats{
     }
     
 ```
-The trigger method will be overridden in multiple subclasses of EventManager such ass Dungeon:
-```java
-public static void trigger(Player p) { 
-        GameLogic.announce("YOU FOUND A DUNGEON");
-        int choice = GameLogic.choice("Do you want to explore it?\n1) Yes\n2) No", 2);
-        if (choice == 1) {
-            Dungeon d = new Dungeon(p);
-            d.randomGen(p);
-            GameLogic.dungeonLoop(d, p);
-        }  
-    }
-```
+
 ## Abstract Data Type (ADT)
 An abstract data type is a data that hides/encapsulates methods and attributes in itself, in this case, we have an abstract class called `CharacterStats`:
 ```java
